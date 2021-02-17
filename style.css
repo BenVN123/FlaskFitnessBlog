@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    background-color: #eeeeee;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+h2, h3, h4, h5, h6  {
+    font-weight: bold;
+}
+
+.navbar {
+    z-index: 1;
+    position:fixed;
+    padding-top: 5px;
+    background-color:#181818;
+    width:70px;
+    height:100vh;
+}
+
+.nav-icon {
+    width:35px;
+    padding:17.5px 17.5px 17.5px 17.5px;
+    margin-bottom: 0;
+    background-color:#181818;
+}
+
+.navbar-nav, .nav-link {
+    background-color:#181818;
+}
+
+.main {
+    padding-left: 70px;
+}
