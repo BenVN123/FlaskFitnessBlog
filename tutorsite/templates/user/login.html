@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+<div class="register-container">
+<div class='register-container-2'>
+  <div class='register-left'>
+  <form method="post">
+    <h1 style="margin-top:15%">Sign In</h1>
+    <input placeholder='Email' name="email" id="email" >
+    <input placeholder='Password' type="password" name="password" id="password" >
+    <input id='register-button' type="submit" value="Login">
+  </form>
+  </div>
+  <div class='register-right'>
+    <h1 style="margin-top:4%">Welcome back!</h1>
+	  <p>Sign in and continue with us or...</p>
+    <a href='{{ url_for('user.register') }}'>
+    <button>Sign Up</button>
+    </a>
+  </div>
+</div>
+</div>
+{% endblock body %}
+
+{% block script %}
+    document.getElementById('user-icon').removeAttribute('fill');
+    document.getElementById('user-icon').setAttribute("fill", "#ff4a4a");
+{% endblock script %}
