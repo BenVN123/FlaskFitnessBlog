@@ -16,7 +16,7 @@ def create_app(test_config=None):
         app.config.from_mapping(test_config)
 
     # makes sure that the instance folder exists
-    # instance folder contains files specally for a certain instance of the application
+    # instance folder contains files specifically for a certain instance of the application
     try:
         os.makedirs(app.instance_path)
     except OSError:
