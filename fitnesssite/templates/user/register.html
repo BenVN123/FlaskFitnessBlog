@@ -1,0 +1,33 @@
+<!-- inherits layout.html -->
+{% extends 'layout.html' %}
+
+{% block title %}Register{% endblock title %}
+
+{% block body %}
+<div class="register-container">
+<div class='register-container-2'>
+  <div class='register-left'>
+  <form method="post">
+    <h1>Sign Up</h1>
+    <input placeholder='Email' name="email" id="email" >
+    <input placeholder='Username' name="username" id="username" >
+    <input placeholder='Password' type="password" name="password" id="password" >
+    <input placeholder='Confirm' type="password" name="confirm" id="password" >
+    <input id='register-button' type="submit" value="Register">
+  </form>
+  </div>
+  <div class='register-right'>
+    <h1>Hello, Friend!</h1>
+	  <p>Enter your personal details and start journey with us or...</p>
+    <a href='{{ url_for('user.login') }}'>
+    <button>Sign In</button>
+    </a>
+  </div>
+</div>
+</div>
+{% endblock body %}
+
+{% block script %}
+    document.getElementById('user-icon').removeAttribute('fill');
+    document.getElementById('user-icon').setAttribute("fill", "#ff4a4a");
+{% endblock script %}
