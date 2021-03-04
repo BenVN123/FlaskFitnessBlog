@@ -1,1 +1,1 @@
-web: gunicorn -w 4 "fitnesssite:create_app()"
+web: export FLASK_APP=fitnesssite | flask run
