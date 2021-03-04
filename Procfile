@@ -1,1 +1,1 @@
-web: export FLASK_APP=fitnesssite | flask run
+web: python run.py
