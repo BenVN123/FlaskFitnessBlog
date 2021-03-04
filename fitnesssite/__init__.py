@@ -5,7 +5,7 @@ def create_app(test_config=None):
     # creates and configures flask app using specified options
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY=os.getenv('SECRET_KEY'),
+        SECRET_KEY='YOUR_KEY_HERE',
         DATABASE=os.path.join(app.instance_path, 'fitnesssite.sqlite'),
     )
 
