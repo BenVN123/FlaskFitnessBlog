@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}Tutor Post{% endblock title %}
+
+{% block body %}
+<div class="index-div">
+<a style="margin-bottom:0.75%" class="index-newpost" href='{{ url_for("post.create") }}'>
+<div>
+    New Post
+</div>
+</a>
+
+<!-- loops through posts from the posts variable given -->
+{% for post in posts %}
+    <article class="post">
+      <header>
+        <div>
+          <h1 style="word-break:break-all;padding-left:6px;padding-right:6px">{{ post['title'] }}</h1>
+          <div style="word-break:break-all;padding-left:6px;padding-right:6px" class="about">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+        </div>
+      </header>
+      <hr style="margin-top:3px;margin-bottom:3px;margin-left:6px;margin-right:6px">
+      <p style="word-break:break-all;padding-left:6px;padding-right:6px" class="body">{{ post['body'] }}</p>
+      <a href='{{ url_for('post.comments', id=post['id']) }}'><button class='view-comments', style='cursor:pointer'>Comments</button></a>
+    </article>
+    {% if loop.last %}
+      <div style="color: #eee; padding-top:5%">You've found me...</div>
+    {% endif %}
+{% endfor %}
+</div>
+{% endblock body %}
+
+{% block script %}
+    document.getElementById('home-icon').removeAttribute('fill');
+    document.getElementById('home-icon').setAttribute("fill", "#ff4a4a");
+{% endblock script %}

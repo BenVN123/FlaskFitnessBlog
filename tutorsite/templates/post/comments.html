@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ post['title'] }}{% endblock title %}
+
+{% block body %}
+<div class="index-div">
+<a style="margin-bottom:0.75%" class="index-newpost" href='{{ url_for("post.newcomment", id=post['id']) }}'>
+<div>
+    New Comment
+</div>
+</a>
+<article class="comment-post">
+      <header>
+        <div>
+          <h1 style="word-break:break-all;padding-left:6px;padding-right:6px">{{ post['title'] }}</h1>
+          <div style="word-break:break-all;padding-left:6px;padding-right:6px" class="about">by {{ username }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+        </div>
+      </header>
+      <hr style="margin-top:3px;margin-bottom:3px;margin-left:6px;margin-right:6px">
+      <p style="word-break:break-all;padding-left:6px;padding-right:6px; padding-bottom:15px" class="body">{{ post['body'] }}</p>
+    </article>
+<h1 style="color:#ff4a4a;padding-top:15px">Comments ({{ comments|length }})</h1>
+{% for post in comments %}
+    <article class="comment">
+      <header>
+        <div>
+          <h1 style="word-break:break-all;padding-left:6px;padding-right:6px">{{ post['title'] }}</h1>
+          <div style="word-break:break-all;padding-left:6px;padding-right:6px" class="about">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+        </div>
+      </header>
+      <hr style="margin-top:3px;margin-bottom:3px;margin-left:6px;margin-right:6px">
+      <p style="word-break:break-all;padding-left:6px;padding-right:6px" class="body">{{ post['body'] }}</p>
+    </article>
+    {% if loop.last %}
+      <div style="color: #eee; padding-top:5%">You've found me...</div>
+    {% endif %}
+{% endfor %}
+</div>
+{% endblock body %}
+
+{% block script %}
+    document.getElementById('home-icon').removeAttribute('fill');
+    document.getElementById('home-icon').setAttribute("fill", "#ff4a4a");
+{% endblock script %}
