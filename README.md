@@ -1,5 +1,5 @@
 # Fitness Blog With Flask
-## Date finished: 02/15/2021
+Date finished: 02/15/2021
 
 A blog website utilizing Flask, a Python "micro-framework", to help fitness enthusiasts spread their knowledge about physical development and health to others. People seeking for a healthier lifestyle also can use this to help improve their knowledge about fitness.
 
